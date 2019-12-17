@@ -28,6 +28,7 @@ userRouter.get('/:id',auth,(ctx)=>{
 });
 
 app.use(userRouter.routes());
+app.use(userRouter.allowedMethods());
 app.use(router.routes());
 
 // 监听端口
