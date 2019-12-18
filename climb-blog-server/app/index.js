@@ -3,6 +3,17 @@ const app = new Koa();
 const routing = require('./routers/index');
 const bodyparser = require('koa-bodyparser');
 
+app.use(async (ctx,next)=>{
+  try {
+    await next();
+  }catch (e) {
+    ctx.status = e.status || e.statusCode || 500;
+    ctx.body = {
+      message: e.message
+    };
+  }
+});
+
 app.use(bodyparser());
 
 // 匹配路由
