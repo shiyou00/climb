@@ -1,8 +1,6 @@
 class UserCtl{
   getUserList(ctx){
-    ctx.set("Allow","GET, POST")
-    console.log(ctx.query); // {q: 'abc'}
-    ctx.body = [];
+    a.b
   }
 
   getUser(ctx) {
