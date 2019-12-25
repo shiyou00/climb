@@ -1,15 +1,16 @@
 class UserCtl{
-  getUserList(ctx){
-    a.b
-  }
+  getUserList(ctx){}
 
   getUser(ctx) {
-    console.log(ctx.params); // {id: 'abc'}
     ctx.body = {};
   }
 
   createUser(ctx){
-    console.log(ctx.request.body); // { name: 'frank' }
+    ctx.verifyParams({
+      name: {type:'string',required: true},
+      password: {type: 'string', required: true}
+    });
+    ctx.body = ctx.request.body;
   }
 
   deleteUser(ctx){
