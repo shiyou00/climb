@@ -1,5 +1,8 @@
 class UserCtl{
-  getUserList(ctx){}
+  getUserList(ctx) {
+    ctx.body = "我是Users";
+  }
+
 
   getUser(ctx) {
     ctx.body = {};

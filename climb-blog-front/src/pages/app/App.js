@@ -5,7 +5,7 @@ import { Button } from 'antd';
 function App() {
   return (
     <div className="app">
-      <Button type="primary">Button</Button>
+      <Button size="large">我是第一个界面</Button>
     </div>
   );
 }

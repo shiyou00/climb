@@ -4,11 +4,15 @@ const routing = require('./routers/index');
 const bodyparser = require('koa-bodyparser');
 const error = require('koa-json-error');
 const parameter = require('koa-parameter');
+const KoaStatic = require('koa-static');
+const path = require('path');
 
 app.use(error({
   postFormat: (e, { stack, ...rest }) => process.env.NODE_ENV === 'production' ? rest : { stack, ...rest }
-}))
-
+}));
+app.use(KoaStatic(
+  path.join(__dirname, './build')
+));
 app.use(bodyparser());
 app.use(parameter(app));
 // 匹配路由
