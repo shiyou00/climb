@@ -19,6 +19,6 @@ app.use(parameter(app));
 routing(app);
 
 // 监听端口
-app.listen(3000,()=>{
+app.listen(3001,()=>{
   console.log('程序已启动在3000端口');
 });
